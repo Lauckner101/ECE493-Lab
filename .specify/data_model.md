@@ -15,7 +15,7 @@
 ### PaperSubmission
 - **id** (UUID)
 - **author_id** (FK -> UserAccount)
-- **metadata** (JSON object)
+- **metadata** (JSON object: title, abstract, keywords)
 - **manuscript_path** (string)
 - **status** (enum: draft, submitted)
 - **created_at** (timestamp)
@@ -33,7 +33,8 @@
 - **id** (UUID)
 - **paper_id** (FK -> PaperSubmission)
 - **referee_id** (FK -> UserAccount)
-- **review_fields** (JSON object)
+- **review_text** (string)
+- **recommendation** (enum: accept, reject)
 - **submitted_at** (timestamp)
 
 ### Decision

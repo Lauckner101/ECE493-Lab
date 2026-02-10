@@ -5,6 +5,17 @@
 **Status**: Draft  
 **Input**: User description: "Use the use case flows in the use case files UC-XX.md as the source of truth. Copy the flows directly into spec.md with only style/grammer edits. Then extract functional requirements from those flows. Do not invent new flows"
 
+## Clarifications
+
+### Session 2026-02-10
+
+- Q: What password policy should the CMS enforce? → A: Minimum 8 chars, complexity required.
+- Q: For paper submissions, do you want drafts to have an expiration? → A: Drafts never expire.
+- Q: Does conference registration allow multiple attendance types per attendee? → A: Exactly one type per attendee.
+- Q: Should schedule generation be deterministic (same inputs always yield the same schedule)? → A: Yes, deterministic for same inputs.
+- Q: When an author clicks Save with no information entered, which behavior should apply? → A: Show warning, do not save.
+- Q: What data retention policy should the CMS use for user accounts, submissions, reviews, and payment records? → A: Retain for 3 years after conference end.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Register User Account (Priority: P1)
@@ -529,11 +540,12 @@ attendee that registration could not be completed.
 
 ### Functional Requirements
 
-- **FR-001**: System MUST display a registration form when a guest selects **Register**.
+- **FR-001**: System MUST display a registration form when a guest selects **Register** and require name, username, email, and password.
 - **FR-002**: System MUST validate email uniqueness during registration.
-- **FR-003**: System MUST validate password against security requirements during
-  registration.
-- **FR-004**: System MUST create and store a new user account upon successful
+- **FR-003**: System MUST validate passwords during registration to enforce a
+  minimum of 8 characters including at least 1 uppercase, 1 lowercase, 1 digit,
+  and 1 symbol.
+- **FR-004**: System MUST create and store a new user account (name, username, email, password) upon successful
   registration.
 - **FR-005**: System MUST redirect newly registered users to the login page.
 - **FR-006**: System MUST display a login form when a user selects **Log In**.
@@ -542,20 +554,27 @@ attendee that registration could not be completed.
 - **FR-009**: System MUST redirect authenticated users to their home page.
 - **FR-010**: System MUST display a change password form from account settings.
 - **FR-011**: System MUST verify the current password before allowing a change.
-- **FR-012**: System MUST validate new passwords against security requirements.
+- **FR-012**: System MUST validate new passwords to enforce a minimum of 8
+  characters including at least 1 uppercase, 1 lowercase, 1 digit, and 1 symbol.
 - **FR-013**: System MUST update the stored password after successful validation.
 - **FR-014**: System MUST display the paper submission form for authors.
-- **FR-015**: System MUST validate required paper metadata on submission.
-- **FR-016**: System MUST validate manuscript file format and size on submission.
+- **FR-015**: System MUST validate required paper metadata on submission: title,
+  abstract, and keywords.
+- **FR-016**: System MUST validate manuscript files to accept PDF only with a
+  maximum size of 10 MB.
 - **FR-017**: System MUST store submitted papers and manuscripts on success.
 - **FR-018**: System MUST allow authors to save paper submissions as drafts.
 - **FR-019**: System MUST validate draft information before saving.
 - **FR-020**: System MUST store drafts separately from submitted papers.
+- **FR-020a**: Draft submissions MUST not expire automatically.
+- **FR-020b**: If no information is entered, the system MUST warn the author and
+  NOT save an empty draft.
 - **FR-021**: System MUST allow editors to assign referees to submitted papers.
 - **FR-022**: System MUST enforce a maximum of three referees per paper.
 - **FR-023**: System MUST enforce a referee workload limit of five assigned papers.
 - **FR-024**: System MUST prevent duplicate referee assignments on a paper.
-- **FR-025**: System MUST send review invitations on successful assignment.
+- **FR-025**: System MUST send review invitations via email and in-app
+  notification on successful assignment.
 - **FR-026**: System MUST record referee acceptance or rejection of invitations.
 - **FR-027**: System MUST block acceptance when referee workload or paper capacity
   limits are exceeded.
@@ -565,15 +584,22 @@ attendee that registration could not be completed.
 - **FR-031**: System MUST allow editors to submit accept or reject decisions once
   three reviews are complete.
 - **FR-032**: System MUST store final decisions and update paper status.
-- **FR-033**: System MUST notify authors of final decisions.
+- **FR-033**: System MUST notify authors of final decisions via email and in-app
+  notification.
 - **FR-034**: System MUST generate a schedule from accepted papers, rooms, and time
   slots when requested by an administrator.
 - **FR-035**: System MUST store generated schedules and display them to users.
 - **FR-036**: System MUST allow editors to edit schedules and validate conflicts
   before saving.
+- **FR-036a**: Schedule generation MUST be deterministic for the same inputs.
 - **FR-037**: System MUST record attendee registrations after successful payment.
-- **FR-038**: System MUST generate and deliver a confirmation/ticket on successful
+- **FR-038**: System MUST generate and deliver a confirmation/ticket via email
+  and in-app notification on successful registration.
+- **FR-039**: System MUST allow exactly one attendance type selection per attendee
   registration.
+- **FR-040**: System MUST retain user accounts, submissions, reviews, and payment
+  records for 3 years after the conference end date and then delete or
+  anonymize them.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -596,8 +622,9 @@ attendee that registration could not be completed.
   stored without retries.
 - **SC-003**: 100% of papers with three completed reviews can receive a final
   decision and author notification without manual workaround.
-- **SC-004**: A generated schedule is viewable by administrators within 1 minute of
-  initiating generation for standard conference sizes.
+- **SC-004**: A generated schedule is viewable by administrators within 1 minute
+  of initiating generation for conferences with up to 1000 submissions, 50 rooms,
+  and 200 time slots.
 - **SC-005**: 95% of attendee registrations with valid payment details complete
   successfully and deliver a confirmation/ticket.
 
@@ -605,15 +632,16 @@ attendee that registration could not be completed.
 
 - **UAT-UC01-001 — Successful Registration**
   **Preconditions:** Guest not logged in; email does not exist in system.
-  **Steps:** Open registration page; enter valid name, email, and password; submit.
+  **Steps:** Open registration page; enter valid name, username, email, and
+  password; submit.
   **Expected Results:** Account is created; user redirected to login page.
 - **UAT-UC01-002 — Duplicate Email Address**
   **Preconditions:** Email already exists in database.
-  **Steps:** Enter existing email; enter valid password; submit form.
+  **Steps:** Enter existing email and username; enter valid password; submit form.
   **Expected Results:** Error message displayed; no account created.
 - **UAT-UC01-003 — Invalid Password**
   **Preconditions:** Email does not exist.
-  **Steps:** Enter valid email; enter weak password; submit form.
+  **Steps:** Enter valid name, username, email; enter weak password; submit form.
   **Expected Results:** Password error displayed; no account created.
 - **UAT-UC01-004 — Missing Required Fields**
   **Preconditions:** Guest on registration form.

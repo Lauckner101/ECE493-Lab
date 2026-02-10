@@ -1,7 +1,7 @@
 # Implementation Plan: Use Case Flow Specification
 
-**Branch**: `001-use-case-spec` | **Date**: 2026-02-10 | **Spec**: /home/nermy/Desktop/ECE493-Lab/.specify/spec.md
-**Input**: Feature specification from /home/nermy/Desktop/ECE493-Lab/.specify/spec.md
+**Branch**: `001-use-case-spec` | **Date**: 2026-02-10 | **Spec**: .specify/spec.md
+**Input**: Feature specification from .specify/spec.md
 
 **Note**: This plan follows the use cases and constraints in the constitution.
 
@@ -43,7 +43,7 @@ validation and constraints enforced per the spec and constitution.
 ### Documentation (this feature)
 
 ```text
-/home/nermy/Desktop/ECE493-Lab/specs/001-use-case-spec/
+.specify/
 ├── plan.md              # This file
 ├── research.md          # Phase 0 output
 ├── data_model.md        # Phase 1 output

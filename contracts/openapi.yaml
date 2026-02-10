@@ -323,7 +323,13 @@ components:
 
     PaperMetadata:
       type: object
-      additionalProperties: true
+      required: [title, abstract, keywords]
+      properties:
+        title: { type: string }
+        abstract: { type: string }
+        keywords:
+          type: array
+          items: { type: string }
 
     RefereeAssignRequest:
       type: object
@@ -333,11 +339,12 @@ components:
 
     ReviewSubmissionRequest:
       type: object
-      required: [review_fields]
+      required: [review_text, recommendation]
       properties:
-        review_fields:
-          type: object
-          additionalProperties: true
+        review_text: { type: string }
+        recommendation:
+          type: string
+          enum: [accept, reject]
 
     DecisionRequest:
       type: object
