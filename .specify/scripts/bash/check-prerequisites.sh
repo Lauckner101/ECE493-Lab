@@ -82,6 +82,19 @@ source "$SCRIPT_DIR/common.sh"
 eval $(get_feature_paths)
 check_feature_branch "$CURRENT_BRANCH" "$HAS_GIT" || exit 1
 
+# Support centralized spec location in .specify/spec.md
+CENTRAL_SPEC_PATH="$REPO_ROOT/.specify/spec.md"
+if [[ -f "$CENTRAL_SPEC_PATH" ]]; then
+    FEATURE_DIR="$REPO_ROOT/.specify"
+    FEATURE_SPEC="$CENTRAL_SPEC_PATH"
+    IMPL_PLAN="$FEATURE_DIR/plan.md"
+    TASKS="$FEATURE_DIR/tasks.md"
+    RESEARCH="$FEATURE_DIR/research.md"
+    DATA_MODEL="$FEATURE_DIR/data-model.md"
+    QUICKSTART="$FEATURE_DIR/quickstart.md"
+    CONTRACTS_DIR="$FEATURE_DIR/contracts"
+fi
+
 # If paths-only mode, output paths and exit (support JSON + paths-only combined)
 if $PATHS_ONLY; then
     if $JSON_MODE; then

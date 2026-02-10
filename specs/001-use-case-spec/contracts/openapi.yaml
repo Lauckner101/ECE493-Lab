@@ -1,0 +1,383 @@
+openapi: 3.0.3
+info:
+  title: CMS API
+  version: 1.0.0
+servers:
+  - url: /api/v1
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Account created
+        '400':
+          description: Validation error
+        '409':
+          description: Email already registered
+
+  /auth/login:
+    post:
+      summary: Log in user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authenticated
+        '400':
+          description: Validation error
+        '401':
+          description: Invalid credentials
+
+  /auth/password/change:
+    post:
+      summary: Change password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChangeRequest'
+      responses:
+        '200':
+          description: Password changed
+        '400':
+          description: Validation error
+        '401':
+          description: Invalid current password
+
+  /papers:
+    post:
+      summary: Submit paper
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PaperSubmissionRequest'
+      responses:
+        '201':
+          description: Paper submitted
+        '400':
+          description: Validation error
+
+  /papers/drafts:
+    post:
+      summary: Save paper draft
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaperDraftRequest'
+      responses:
+        '201':
+          description: Draft saved
+        '400':
+          description: Validation error or empty draft
+
+  /papers/{paperId}/submit:
+    put:
+      summary: Submit an existing draft
+      parameters:
+        - in: path
+          name: paperId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PaperSubmissionRequest'
+      responses:
+        '200':
+          description: Draft submitted
+        '400':
+          description: Validation error
+
+  /papers/{paperId}/referees:
+    post:
+      summary: Assign a referee to a paper
+      parameters:
+        - in: path
+          name: paperId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefereeAssignRequest'
+      responses:
+        '201':
+          description: Referee assigned
+        '400':
+          description: Validation error
+        '409':
+          description: Duplicate or capacity exceeded
+
+  /invitations/{invitationId}/accept:
+    post:
+      summary: Accept review invitation
+      parameters:
+        - in: path
+          name: invitationId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Invitation accepted
+        '409':
+          description: Workload or capacity exceeded
+
+  /invitations/{invitationId}/reject:
+    post:
+      summary: Reject review invitation
+      parameters:
+        - in: path
+          name: invitationId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Invitation rejected
+
+  /papers/{paperId}/reviews:
+    post:
+      summary: Submit review
+      parameters:
+        - in: path
+          name: paperId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewSubmissionRequest'
+      responses:
+        '201':
+          description: Review submitted
+        '400':
+          description: Validation error
+        '409':
+          description: Duplicate submission
+
+  /papers/{paperId}/decision:
+    post:
+      summary: Submit final decision
+      parameters:
+        - in: path
+          name: paperId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DecisionRequest'
+      responses:
+        '201':
+          description: Decision recorded
+        '400':
+          description: Validation error
+        '409':
+          description: Insufficient reviews or duplicate decision
+
+  /schedule/generate:
+    post:
+      summary: Generate conference schedule
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleGenerateRequest'
+      responses:
+        '200':
+          description: Schedule generated
+        '400':
+          description: Validation error or unsatisfiable constraints
+
+  /schedule/current:
+    get:
+      summary: Get current schedule
+      responses:
+        '200':
+          description: Current schedule
+
+    put:
+      summary: Edit current schedule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduleEditRequest'
+      responses:
+        '200':
+          description: Schedule updated
+        '400':
+          description: Validation error or conflicts
+
+  /conference/registration:
+    post:
+      summary: Register for conference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationRequest'
+      responses:
+        '201':
+          description: Registration created
+        '400':
+          description: Validation error
+
+  /conference/registration/{registrationId}/pay:
+    post:
+      summary: Process conference registration payment
+      parameters:
+        - in: path
+          name: registrationId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '200':
+          description: Payment processed
+        '400':
+          description: Validation error
+        '402':
+          description: Payment declined
+
+components:
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [name, username, email, password]
+      properties:
+        name: { type: string }
+        username: { type: string }
+        email: { type: string, format: email }
+        password: { type: string }
+
+    LoginRequest:
+      type: object
+      required: [username, password]
+      properties:
+        username: { type: string }
+        password: { type: string }
+
+    PasswordChangeRequest:
+      type: object
+      required: [current_password, new_password, confirm_password]
+      properties:
+        current_password: { type: string }
+        new_password: { type: string }
+        confirm_password: { type: string }
+
+    PaperSubmissionRequest:
+      type: object
+      required: [metadata, manuscript]
+      properties:
+        metadata:
+          $ref: '#/components/schemas/PaperMetadata'
+        manuscript:
+          type: string
+          format: binary
+
+    PaperDraftRequest:
+      type: object
+      required: [metadata]
+      properties:
+        metadata:
+          $ref: '#/components/schemas/PaperMetadata'
+
+    PaperMetadata:
+      type: object
+      additionalProperties: true
+
+    RefereeAssignRequest:
+      type: object
+      required: [referee_email]
+      properties:
+        referee_email: { type: string, format: email }
+
+    ReviewSubmissionRequest:
+      type: object
+      required: [review_fields]
+      properties:
+        review_fields:
+          type: object
+          additionalProperties: true
+
+    DecisionRequest:
+      type: object
+      required: [decision]
+      properties:
+        decision:
+          type: string
+          enum: [accept, reject]
+
+    ScheduleGenerateRequest:
+      type: object
+      properties:
+        conference_id: { type: string }
+
+    ScheduleEditRequest:
+      type: object
+      required: [items]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduleItem'
+
+    ScheduleItem:
+      type: object
+      required: [paper_id, room_id, time_slot_id]
+      properties:
+        paper_id: { type: string }
+        room_id: { type: string }
+        time_slot_id: { type: string }
+
+    RegistrationRequest:
+      type: object
+      required: [conference_id, attendance_type]
+      properties:
+        conference_id: { type: string }
+        attendance_type: { type: string }
+
+    PaymentRequest:
+      type: object
+      required: [payment_details]
+      properties:
+        payment_details: { type: string }
