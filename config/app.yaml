@@ -1,0 +1,4 @@
+app:
+  name: cms
+  env: development
+  db_url: postgres://cms:cms@localhost:5432/cms

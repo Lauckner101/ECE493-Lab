@@ -22,11 +22,11 @@ description: "Task list for CMS implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per plan in `src/` and `tests/`
-- [ ] T002 Initialize CMake build with dependencies in `CMakeLists.txt`
-- [ ] T003 [P] Add Google C++ style config in `.clang-format`
-- [ ] T004 [P] Add test runner configuration in `tests/CMakeLists.txt`
-- [ ] T005 [P] Add environment config template in `config/app.yaml`
+- [X] T001 Create project structure per plan in `src/` and `tests/`
+- [X] T002 Initialize CMake build with dependencies in `CMakeLists.txt`
+- [X] T003 [P] Add Google C++ style config in `.clang-format`
+- [X] T004 [P] Add test runner configuration in `tests/CMakeLists.txt`
+- [X] T005 [P] Add environment config template in `config/app.yaml`
 
 ---
 
@@ -36,15 +36,15 @@ description: "Task list for CMS implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create database schema and migrations in `db/schema.sql`
-- [ ] T007 Implement DB connection and migration runner in `src/services/db.cpp`
-- [ ] T008 Create base UserAccount model in `src/models/user_account.cpp`
-- [ ] T009 Create Conference, Room, TimeSlot models in `src/models/conference.cpp`
-- [ ] T010 Implement request validation helpers in `src/lib/validation.cpp`
-- [ ] T011 Implement auth/session middleware in `src/api/auth_middleware.cpp`
-- [ ] T012 Implement error response helpers in `src/api/http_errors.cpp`
-- [ ] T013 Implement logging setup in `src/lib/logging.cpp`
-- [ ] T014 Implement notification service interface in `src/services/notification_service.cpp`
+- [X] T006 Create database schema and migrations in `db/schema.sql`
+- [X] T007 Implement DB connection and migration runner in `src/services/db.cpp`
+- [X] T008 Create base UserAccount model in `src/models/user_account.cpp`
+- [X] T009 Create Conference, Room, TimeSlot models in `src/models/conference.cpp`
+- [X] T010 Implement request validation helpers in `src/lib/validation.cpp`
+- [X] T011 Implement auth/session middleware in `src/api/auth_middleware.cpp`
+- [X] T012 Implement error response helpers in `src/api/http_errors.cpp`
+- [X] T013 Implement logging setup in `src/lib/logging.cpp`
+- [X] T014 Implement notification service interface in `src/services/notification_service.cpp`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -58,17 +58,17 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 1
 
-- [ ] T015 [P] [US1] Add UAT registration tests in `tests/acceptance/uat_uc01_registration.cpp`
-- [ ] T016 [P] [US1] Add contract test for POST /auth/register in `tests/contract/auth_register_contract.cpp`
-- [ ] T017 [P] [US1] Add integration test for registration flow in `tests/integration/registration_flow.cpp`
+- [X] T015 [P] [US1] Add UAT registration tests in `tests/acceptance/uat_uc01_registration.cpp`
+- [X] T016 [P] [US1] Add contract test for POST /auth/register in `tests/contract/auth_register_contract.cpp`
+- [X] T017 [P] [US1] Add integration test for registration flow in `tests/integration/registration_flow.cpp`
 
 ### Implementation for User Story 1
 
-- [ ] T018 [P] [US1] Add user repository in `src/services/user_repository.cpp`
-- [ ] T019 [US1] Implement registration service in `src/services/auth_service.cpp`
-- [ ] T020 [US1] Implement register endpoint in `src/api/auth_controller.cpp`
-- [ ] T021 [US1] Wire route for POST /auth/register in `src/api/routes.cpp`
-- [ ] T022 [US1] Add password complexity validation in `src/lib/validation.cpp`
+- [X] T018 [P] [US1] Add user repository in `src/services/user_repository.cpp`
+- [X] T019 [US1] Implement registration service in `src/services/auth_service.cpp`
+- [X] T020 [US1] Implement register endpoint in `src/api/auth_controller.cpp`
+- [X] T021 [US1] Wire route for POST /auth/register in `src/api/routes.cpp`
+- [X] T022 [US1] Add password complexity validation in `src/lib/validation.cpp`
 
 **Checkpoint**: User Story 1 is independently testable
 
@@ -82,16 +82,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 2
 
-- [ ] T023 [P] [US2] Add UAT login tests in `tests/acceptance/uat_uc02_login.cpp`
-- [ ] T024 [P] [US2] Add contract test for POST /auth/login in `tests/contract/auth_login_contract.cpp`
-- [ ] T025 [P] [US2] Add integration test for login flow in `tests/integration/login_flow.cpp`
+- [X] T023 [P] [US2] Add UAT login tests in `tests/acceptance/uat_uc02_login.cpp`
+- [X] T024 [P] [US2] Add contract test for POST /auth/login in `tests/contract/auth_login_contract.cpp`
+- [X] T025 [P] [US2] Add integration test for login flow in `tests/integration/login_flow.cpp`
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Implement session store in `src/services/session_service.cpp`
-- [ ] T027 [US2] Implement login service in `src/services/auth_service.cpp`
-- [ ] T028 [US2] Implement login endpoint in `src/api/auth_controller.cpp`
-- [ ] T029 [US2] Wire route for POST /auth/login in `src/api/routes.cpp`
+- [X] T026 [P] [US2] Implement session store in `src/services/session_service.cpp`
+- [X] T027 [US2] Implement login service in `src/services/auth_service.cpp`
+- [X] T028 [US2] Implement login endpoint in `src/api/auth_controller.cpp`
+- [X] T029 [US2] Wire route for POST /auth/login in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 2 is independently testable
 
@@ -105,15 +105,15 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 3
 
-- [ ] T030 [P] [US3] Add UAT change password tests in `tests/acceptance/uat_uc03_password_change.cpp`
-- [ ] T031 [P] [US3] Add contract test for POST /auth/password/change in `tests/contract/auth_password_change_contract.cpp`
-- [ ] T032 [P] [US3] Add integration test for password change flow in `tests/integration/password_change_flow.cpp`
+- [X] T030 [P] [US3] Add UAT change password tests in `tests/acceptance/uat_uc03_password_change.cpp`
+- [X] T031 [P] [US3] Add contract test for POST /auth/password/change in `tests/contract/auth_password_change_contract.cpp`
+- [X] T032 [P] [US3] Add integration test for password change flow in `tests/integration/password_change_flow.cpp`
 
 ### Implementation for User Story 3
 
-- [ ] T033 [US3] Implement password change service in `src/services/auth_service.cpp`
-- [ ] T034 [US3] Implement password change endpoint in `src/api/auth_controller.cpp`
-- [ ] T035 [US3] Wire route for POST /auth/password/change in `src/api/routes.cpp`
+- [X] T033 [US3] Implement password change service in `src/services/auth_service.cpp`
+- [X] T034 [US3] Implement password change endpoint in `src/api/auth_controller.cpp`
+- [X] T035 [US3] Wire route for POST /auth/password/change in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 3 is independently testable
 
@@ -127,16 +127,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 4
 
-- [ ] T036 [P] [US4] Add UAT submission tests in `tests/acceptance/uat_uc04_submit_paper.cpp`
-- [ ] T037 [P] [US4] Add contract test for POST /papers in `tests/contract/papers_submit_contract.cpp`
-- [ ] T038 [P] [US4] Add integration test for submission flow in `tests/integration/paper_submit_flow.cpp`
+- [X] T036 [P] [US4] Add UAT submission tests in `tests/acceptance/uat_uc04_submit_paper.cpp`
+- [X] T037 [P] [US4] Add contract test for POST /papers in `tests/contract/papers_submit_contract.cpp`
+- [X] T038 [P] [US4] Add integration test for submission flow in `tests/integration/paper_submit_flow.cpp`
 
 ### Implementation for User Story 4
 
-- [ ] T039 [P] [US4] Create PaperSubmission model in `src/models/paper_submission.cpp`
-- [ ] T040 [US4] Implement paper submission service with PDF-only and 10 MB limits in `src/services/paper_service.cpp`
-- [ ] T041 [US4] Implement submit endpoint in `src/api/paper_controller.cpp`
-- [ ] T042 [US4] Wire route for POST /papers in `src/api/routes.cpp`
+- [X] T039 [P] [US4] Create PaperSubmission model in `src/models/paper_submission.cpp`
+- [X] T040 [US4] Implement paper submission service with PDF-only and 10 MB limits in `src/services/paper_service.cpp`
+- [X] T041 [US4] Implement submit endpoint in `src/api/paper_controller.cpp`
+- [X] T042 [US4] Wire route for POST /papers in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 4 is independently testable
 
@@ -150,16 +150,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 5
 
-- [ ] T043 [P] [US5] Add UAT draft tests in `tests/acceptance/uat_uc05_save_draft.cpp`
-- [ ] T044 [P] [US5] Add contract test for POST /papers/drafts in `tests/contract/papers_draft_contract.cpp`
-- [ ] T045 [P] [US5] Add contract test for PUT /papers/{paperId}/submit in `tests/contract/papers_submit_draft_contract.cpp`
+- [X] T043 [P] [US5] Add UAT draft tests in `tests/acceptance/uat_uc05_save_draft.cpp`
+- [X] T044 [P] [US5] Add contract test for POST /papers/drafts in `tests/contract/papers_draft_contract.cpp`
+- [X] T045 [P] [US5] Add contract test for PUT /papers/{paperId}/submit in `tests/contract/papers_submit_draft_contract.cpp`
 
 ### Implementation for User Story 5
 
-- [ ] T046 [US5] Implement draft save service in `src/services/paper_service.cpp`
-- [ ] T047 [US5] Implement draft submit service in `src/services/paper_service.cpp`
-- [ ] T048 [US5] Implement draft endpoints in `src/api/paper_controller.cpp`
-- [ ] T049 [US5] Wire routes for draft endpoints in `src/api/routes.cpp`
+- [X] T046 [US5] Implement draft save service in `src/services/paper_service.cpp`
+- [X] T047 [US5] Implement draft submit service in `src/services/paper_service.cpp`
+- [X] T048 [US5] Implement draft endpoints in `src/api/paper_controller.cpp`
+- [X] T049 [US5] Wire routes for draft endpoints in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 5 is independently testable
 
@@ -173,16 +173,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 6
 
-- [ ] T050 [P] [US6] Add UAT referee assignment tests in `tests/acceptance/uat_uc06_assign_referees.cpp`
-- [ ] T051 [P] [US6] Add contract test for POST /papers/{paperId}/referees in `tests/contract/referee_assign_contract.cpp`
-- [ ] T052 [P] [US6] Add integration test for assignment flow in `tests/integration/referee_assign_flow.cpp`
+- [X] T050 [P] [US6] Add UAT referee assignment tests in `tests/acceptance/uat_uc06_assign_referees.cpp`
+- [X] T051 [P] [US6] Add contract test for POST /papers/{paperId}/referees in `tests/contract/referee_assign_contract.cpp`
+- [X] T052 [P] [US6] Add integration test for assignment flow in `tests/integration/referee_assign_flow.cpp`
 
 ### Implementation for User Story 6
 
-- [ ] T053 [P] [US6] Create RefereeAssignment model in `src/models/referee_assignment.cpp`
-- [ ] T054 [US6] Implement referee assignment service in `src/services/referee_service.cpp`
-- [ ] T055 [US6] Implement assignment endpoint in `src/api/referee_controller.cpp`
-- [ ] T056 [US6] Wire route for POST /papers/{paperId}/referees in `src/api/routes.cpp`
+- [X] T053 [P] [US6] Create RefereeAssignment model in `src/models/referee_assignment.cpp`
+- [X] T054 [US6] Implement referee assignment service in `src/services/referee_service.cpp`
+- [X] T055 [US6] Implement assignment endpoint in `src/api/referee_controller.cpp`
+- [X] T056 [US6] Wire route for POST /papers/{paperId}/referees in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 6 is independently testable
 
@@ -196,15 +196,15 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 7
 
-- [ ] T057 [P] [US7] Add UAT invitation response tests in `tests/acceptance/uat_uc07_invitation_response.cpp`
-- [ ] T058 [P] [US7] Add contract test for POST /invitations/{id}/accept in `tests/contract/invitation_accept_contract.cpp`
-- [ ] T059 [P] [US7] Add contract test for POST /invitations/{id}/reject in `tests/contract/invitation_reject_contract.cpp`
+- [X] T057 [P] [US7] Add UAT invitation response tests in `tests/acceptance/uat_uc07_invitation_response.cpp`
+- [X] T058 [P] [US7] Add contract test for POST /invitations/{id}/accept in `tests/contract/invitation_accept_contract.cpp`
+- [X] T059 [P] [US7] Add contract test for POST /invitations/{id}/reject in `tests/contract/invitation_reject_contract.cpp`
 
 ### Implementation for User Story 7
 
-- [ ] T060 [US7] Implement invitation response service in `src/services/referee_service.cpp`
-- [ ] T061 [US7] Implement invitation endpoints in `src/api/referee_controller.cpp`
-- [ ] T062 [US7] Wire routes for invitation endpoints in `src/api/routes.cpp`
+- [X] T060 [US7] Implement invitation response service in `src/services/referee_service.cpp`
+- [X] T061 [US7] Implement invitation endpoints in `src/api/referee_controller.cpp`
+- [X] T062 [US7] Wire routes for invitation endpoints in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 7 is independently testable
 
@@ -218,16 +218,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 8
 
-- [ ] T063 [P] [US8] Add UAT review submission tests in `tests/acceptance/uat_uc08_submit_review.cpp`
-- [ ] T064 [P] [US8] Add contract test for POST /papers/{paperId}/reviews in `tests/contract/review_submit_contract.cpp`
-- [ ] T065 [P] [US8] Add integration test for review flow in `tests/integration/review_submit_flow.cpp`
+- [X] T063 [P] [US8] Add UAT review submission tests in `tests/acceptance/uat_uc08_submit_review.cpp`
+- [X] T064 [P] [US8] Add contract test for POST /papers/{paperId}/reviews in `tests/contract/review_submit_contract.cpp`
+- [X] T065 [P] [US8] Add integration test for review flow in `tests/integration/review_submit_flow.cpp`
 
 ### Implementation for User Story 8
 
-- [ ] T066 [P] [US8] Create Review model in `src/models/review.cpp`
-- [ ] T067 [US8] Implement review submission service in `src/services/review_service.cpp`
-- [ ] T068 [US8] Implement review endpoint in `src/api/review_controller.cpp`
-- [ ] T069 [US8] Wire route for POST /papers/{paperId}/reviews in `src/api/routes.cpp`
+- [X] T066 [P] [US8] Create Review model in `src/models/review.cpp`
+- [X] T067 [US8] Implement review submission service in `src/services/review_service.cpp`
+- [X] T068 [US8] Implement review endpoint in `src/api/review_controller.cpp`
+- [X] T069 [US8] Wire route for POST /papers/{paperId}/reviews in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 8 is independently testable
 
@@ -241,16 +241,16 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 9
 
-- [ ] T070 [P] [US9] Add UAT decision tests in `tests/acceptance/uat_uc09_decision.cpp`
-- [ ] T071 [P] [US9] Add contract test for POST /papers/{paperId}/decision in `tests/contract/decision_contract.cpp`
-- [ ] T072 [P] [US9] Add integration test for decision flow in `tests/integration/decision_flow.cpp`
+- [X] T070 [P] [US9] Add UAT decision tests in `tests/acceptance/uat_uc09_decision.cpp`
+- [X] T071 [P] [US9] Add contract test for POST /papers/{paperId}/decision in `tests/contract/decision_contract.cpp`
+- [X] T072 [P] [US9] Add integration test for decision flow in `tests/integration/decision_flow.cpp`
 
 ### Implementation for User Story 9
 
-- [ ] T073 [P] [US9] Create Decision model in `src/models/decision.cpp`
-- [ ] T074 [US9] Implement decision service in `src/services/decision_service.cpp`
-- [ ] T075 [US9] Implement decision endpoint in `src/api/decision_controller.cpp`
-- [ ] T076 [US9] Wire route for POST /papers/{paperId}/decision in `src/api/routes.cpp`
+- [X] T073 [P] [US9] Create Decision model in `src/models/decision.cpp`
+- [X] T074 [US9] Implement decision service in `src/services/decision_service.cpp`
+- [X] T075 [US9] Implement decision endpoint in `src/api/decision_controller.cpp`
+- [X] T076 [US9] Wire route for POST /papers/{paperId}/decision in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 9 is independently testable
 
@@ -264,15 +264,15 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 10
 
-- [ ] T077 [P] [US10] Add UAT schedule generation tests in `tests/acceptance/uat_uc10_generate_schedule.cpp`
-- [ ] T078 [P] [US10] Add contract test for POST /schedule/generate in `tests/contract/schedule_generate_contract.cpp`
+- [X] T077 [P] [US10] Add UAT schedule generation tests in `tests/acceptance/uat_uc10_generate_schedule.cpp`
+- [X] T078 [P] [US10] Add contract test for POST /schedule/generate in `tests/contract/schedule_generate_contract.cpp`
 
 ### Implementation for User Story 10
 
-- [ ] T079 [P] [US10] Create Schedule and ScheduleItem models in `src/models/schedule.cpp`
-- [ ] T080 [US10] Implement scheduling service in `src/services/schedule_service.cpp`
-- [ ] T081 [US10] Implement schedule generation endpoint in `src/api/schedule_controller.cpp`
-- [ ] T082 [US10] Wire route for POST /schedule/generate in `src/api/routes.cpp`
+- [X] T079 [P] [US10] Create Schedule and ScheduleItem models in `src/models/schedule.cpp`
+- [X] T080 [US10] Implement scheduling service in `src/services/schedule_service.cpp`
+- [X] T081 [US10] Implement schedule generation endpoint in `src/api/schedule_controller.cpp`
+- [X] T082 [US10] Wire route for POST /schedule/generate in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 10 is independently testable
 
@@ -286,14 +286,14 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 11
 
-- [ ] T083 [P] [US11] Add UAT schedule edit tests in `tests/acceptance/uat_uc11_edit_schedule.cpp`
-- [ ] T084 [P] [US11] Add contract test for PUT /schedule/current in `tests/contract/schedule_edit_contract.cpp`
+- [X] T083 [P] [US11] Add UAT schedule edit tests in `tests/acceptance/uat_uc11_edit_schedule.cpp`
+- [X] T084 [P] [US11] Add contract test for PUT /schedule/current in `tests/contract/schedule_edit_contract.cpp`
 
 ### Implementation for User Story 11
 
-- [ ] T085 [US11] Implement schedule edit service in `src/services/schedule_service.cpp`
-- [ ] T086 [US11] Implement schedule edit endpoint in `src/api/schedule_controller.cpp`
-- [ ] T087 [US11] Wire route for PUT /schedule/current in `src/api/routes.cpp`
+- [X] T085 [US11] Implement schedule edit service in `src/services/schedule_service.cpp`
+- [X] T086 [US11] Implement schedule edit endpoint in `src/api/schedule_controller.cpp`
+- [X] T087 [US11] Wire route for PUT /schedule/current in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 11 is independently testable
 
@@ -307,18 +307,18 @@ description: "Task list for CMS implementation"
 
 ### Tests for User Story 12
 
-- [ ] T088 [P] [US12] Add UAT registration/payment tests in `tests/acceptance/uat_uc12_registration.cpp`
-- [ ] T089 [P] [US12] Add contract test for POST /conference/registration in `tests/contract/registration_contract.cpp`
-- [ ] T090 [P] [US12] Add contract test for POST /conference/registration/{id}/pay in `tests/contract/payment_contract.cpp`
-- [ ] T091 [P] [US12] Add integration test for registration/payment flow in `tests/integration/registration_payment_flow.cpp`
+- [X] T088 [P] [US12] Add UAT registration/payment tests in `tests/acceptance/uat_uc12_registration.cpp`
+- [X] T089 [P] [US12] Add contract test for POST /conference/registration in `tests/contract/registration_contract.cpp`
+- [X] T090 [P] [US12] Add contract test for POST /conference/registration/{id}/pay in `tests/contract/payment_contract.cpp`
+- [X] T091 [P] [US12] Add integration test for registration/payment flow in `tests/integration/registration_payment_flow.cpp`
 
 ### Implementation for User Story 12
 
-- [ ] T092 [P] [US12] Create Registration, PaymentRecord, Ticket models in `src/models/registration.cpp`
-- [ ] T093 [US12] Implement registration service in `src/services/registration_service.cpp`
-- [ ] T094 [US12] Implement payment service in `src/services/payment_service.cpp`
-- [ ] T095 [US12] Implement registration endpoints in `src/api/registration_controller.cpp`
-- [ ] T096 [US12] Wire routes for registration/payment in `src/api/routes.cpp`
+- [X] T092 [P] [US12] Create Registration, PaymentRecord, Ticket models in `src/models/registration.cpp`
+- [X] T093 [US12] Implement registration service in `src/services/registration_service.cpp`
+- [X] T094 [US12] Implement payment service in `src/services/payment_service.cpp`
+- [X] T095 [US12] Implement registration endpoints in `src/api/registration_controller.cpp`
+- [X] T096 [US12] Wire routes for registration/payment in `src/api/routes.cpp`
 
 **Checkpoint**: User Story 12 is independently testable
 
