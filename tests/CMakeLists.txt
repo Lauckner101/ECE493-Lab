@@ -1,0 +1,179 @@
+add_executable(uat_uc01_registration acceptance/uat_uc01_registration.cpp)
+target_include_directories(uat_uc01_registration PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc01_registration PRIVATE cms_core)
+add_test(NAME uat_uc01_registration COMMAND uat_uc01_registration)
+
+add_executable(auth_register_contract contract/auth_register_contract.cpp)
+target_include_directories(auth_register_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(auth_register_contract PRIVATE cms_core)
+add_test(NAME auth_register_contract COMMAND auth_register_contract)
+
+add_executable(registration_flow integration/registration_flow.cpp)
+target_include_directories(registration_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(registration_flow PRIVATE cms_core)
+add_test(NAME registration_flow COMMAND registration_flow)
+
+add_executable(uat_uc02_login acceptance/uat_uc02_login.cpp)
+target_include_directories(uat_uc02_login PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc02_login PRIVATE cms_core)
+add_test(NAME uat_uc02_login COMMAND uat_uc02_login)
+
+add_executable(auth_login_contract contract/auth_login_contract.cpp)
+target_include_directories(auth_login_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(auth_login_contract PRIVATE cms_core)
+add_test(NAME auth_login_contract COMMAND auth_login_contract)
+
+add_executable(login_flow integration/login_flow.cpp)
+target_include_directories(login_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(login_flow PRIVATE cms_core)
+add_test(NAME login_flow COMMAND login_flow)
+
+add_executable(uat_uc03_password_change acceptance/uat_uc03_password_change.cpp)
+target_include_directories(uat_uc03_password_change PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc03_password_change PRIVATE cms_core)
+add_test(NAME uat_uc03_password_change COMMAND uat_uc03_password_change)
+
+add_executable(auth_password_change_contract contract/auth_password_change_contract.cpp)
+target_include_directories(auth_password_change_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(auth_password_change_contract PRIVATE cms_core)
+add_test(NAME auth_password_change_contract COMMAND auth_password_change_contract)
+
+add_executable(password_change_flow integration/password_change_flow.cpp)
+target_include_directories(password_change_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(password_change_flow PRIVATE cms_core)
+add_test(NAME password_change_flow COMMAND password_change_flow)
+
+add_executable(uat_uc04_submit_paper acceptance/uat_uc04_submit_paper.cpp)
+target_include_directories(uat_uc04_submit_paper PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc04_submit_paper PRIVATE cms_core)
+add_test(NAME uat_uc04_submit_paper COMMAND uat_uc04_submit_paper)
+
+add_executable(papers_submit_contract contract/papers_submit_contract.cpp)
+target_include_directories(papers_submit_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(papers_submit_contract PRIVATE cms_core)
+add_test(NAME papers_submit_contract COMMAND papers_submit_contract)
+
+add_executable(paper_submit_flow integration/paper_submit_flow.cpp)
+target_include_directories(paper_submit_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(paper_submit_flow PRIVATE cms_core)
+add_test(NAME paper_submit_flow COMMAND paper_submit_flow)
+
+add_executable(uat_uc05_save_draft acceptance/uat_uc05_save_draft.cpp)
+target_include_directories(uat_uc05_save_draft PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc05_save_draft PRIVATE cms_core)
+add_test(NAME uat_uc05_save_draft COMMAND uat_uc05_save_draft)
+
+add_executable(papers_draft_contract contract/papers_draft_contract.cpp)
+target_include_directories(papers_draft_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(papers_draft_contract PRIVATE cms_core)
+add_test(NAME papers_draft_contract COMMAND papers_draft_contract)
+
+add_executable(papers_submit_draft_contract contract/papers_submit_draft_contract.cpp)
+target_include_directories(papers_submit_draft_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(papers_submit_draft_contract PRIVATE cms_core)
+add_test(NAME papers_submit_draft_contract COMMAND papers_submit_draft_contract)
+
+add_executable(draft_submit_flow integration/draft_submit_flow.cpp)
+target_include_directories(draft_submit_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(draft_submit_flow PRIVATE cms_core)
+add_test(NAME draft_submit_flow COMMAND draft_submit_flow)
+
+add_executable(uat_uc06_assign_referees acceptance/uat_uc06_assign_referees.cpp)
+target_include_directories(uat_uc06_assign_referees PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc06_assign_referees PRIVATE cms_core)
+add_test(NAME uat_uc06_assign_referees COMMAND uat_uc06_assign_referees)
+
+add_executable(referee_assign_contract contract/referee_assign_contract.cpp)
+target_include_directories(referee_assign_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(referee_assign_contract PRIVATE cms_core)
+add_test(NAME referee_assign_contract COMMAND referee_assign_contract)
+
+add_executable(referee_assign_flow integration/referee_assign_flow.cpp)
+target_include_directories(referee_assign_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(referee_assign_flow PRIVATE cms_core)
+add_test(NAME referee_assign_flow COMMAND referee_assign_flow)
+
+add_executable(uat_uc07_invitation_response acceptance/uat_uc07_invitation_response.cpp)
+target_include_directories(uat_uc07_invitation_response PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc07_invitation_response PRIVATE cms_core)
+add_test(NAME uat_uc07_invitation_response COMMAND uat_uc07_invitation_response)
+
+add_executable(invitation_accept_contract contract/invitation_accept_contract.cpp)
+target_include_directories(invitation_accept_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(invitation_accept_contract PRIVATE cms_core)
+add_test(NAME invitation_accept_contract COMMAND invitation_accept_contract)
+
+add_executable(invitation_reject_contract contract/invitation_reject_contract.cpp)
+target_include_directories(invitation_reject_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(invitation_reject_contract PRIVATE cms_core)
+add_test(NAME invitation_reject_contract COMMAND invitation_reject_contract)
+
+add_executable(uat_uc08_submit_review acceptance/uat_uc08_submit_review.cpp)
+target_include_directories(uat_uc08_submit_review PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc08_submit_review PRIVATE cms_core)
+add_test(NAME uat_uc08_submit_review COMMAND uat_uc08_submit_review)
+
+add_executable(review_submit_contract contract/review_submit_contract.cpp)
+target_include_directories(review_submit_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(review_submit_contract PRIVATE cms_core)
+add_test(NAME review_submit_contract COMMAND review_submit_contract)
+
+add_executable(review_submit_flow integration/review_submit_flow.cpp)
+target_include_directories(review_submit_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(review_submit_flow PRIVATE cms_core)
+add_test(NAME review_submit_flow COMMAND review_submit_flow)
+
+add_executable(uat_uc09_decision acceptance/uat_uc09_decision.cpp)
+target_include_directories(uat_uc09_decision PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc09_decision PRIVATE cms_core)
+add_test(NAME uat_uc09_decision COMMAND uat_uc09_decision)
+
+add_executable(decision_contract contract/decision_contract.cpp)
+target_include_directories(decision_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(decision_contract PRIVATE cms_core)
+add_test(NAME decision_contract COMMAND decision_contract)
+
+add_executable(decision_flow integration/decision_flow.cpp)
+target_include_directories(decision_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(decision_flow PRIVATE cms_core)
+add_test(NAME decision_flow COMMAND decision_flow)
+
+add_executable(uat_uc10_generate_schedule acceptance/uat_uc10_generate_schedule.cpp)
+target_include_directories(uat_uc10_generate_schedule PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc10_generate_schedule PRIVATE cms_core)
+add_test(NAME uat_uc10_generate_schedule COMMAND uat_uc10_generate_schedule)
+
+add_executable(schedule_generate_contract contract/schedule_generate_contract.cpp)
+target_include_directories(schedule_generate_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(schedule_generate_contract PRIVATE cms_core)
+add_test(NAME schedule_generate_contract COMMAND schedule_generate_contract)
+
+add_executable(uat_uc11_edit_schedule acceptance/uat_uc11_edit_schedule.cpp)
+target_include_directories(uat_uc11_edit_schedule PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc11_edit_schedule PRIVATE cms_core)
+add_test(NAME uat_uc11_edit_schedule COMMAND uat_uc11_edit_schedule)
+
+add_executable(schedule_edit_contract contract/schedule_edit_contract.cpp)
+target_include_directories(schedule_edit_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(schedule_edit_contract PRIVATE cms_core)
+add_test(NAME schedule_edit_contract COMMAND schedule_edit_contract)
+
+add_executable(uat_uc12_registration acceptance/uat_uc12_registration.cpp)
+target_include_directories(uat_uc12_registration PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(uat_uc12_registration PRIVATE cms_core)
+add_test(NAME uat_uc12_registration COMMAND uat_uc12_registration)
+
+add_executable(registration_contract contract/registration_contract.cpp)
+target_include_directories(registration_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(registration_contract PRIVATE cms_core)
+add_test(NAME registration_contract COMMAND registration_contract)
+
+add_executable(payment_contract contract/payment_contract.cpp)
+target_include_directories(payment_contract PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(payment_contract PRIVATE cms_core)
+add_test(NAME payment_contract COMMAND payment_contract)
+
+add_executable(registration_payment_flow integration/registration_payment_flow.cpp)
+target_include_directories(registration_payment_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(registration_payment_flow PRIVATE cms_core)
+add_test(NAME registration_payment_flow COMMAND registration_payment_flow)

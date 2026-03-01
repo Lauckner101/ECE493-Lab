@@ -1,0 +1,24 @@
+# C++ build outputs
+build/
+bin/
+obj/
+out/
+*.o
+*.so
+*.a
+*.exe
+*.dll
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+
+# Logs and env
+*.log
+.env*
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.tmp
