@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/schedule_generate_contract.dir/contract/schedule_generate_contract.cpp.o -o schedule_generate_contract  ../libcms_core.a 

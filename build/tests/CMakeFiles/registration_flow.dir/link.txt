@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/registration_flow.dir/integration/registration_flow.cpp.o -o registration_flow  ../libcms_core.a 

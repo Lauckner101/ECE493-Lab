@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/papers_submit_draft_contract.dir/contract/papers_submit_draft_contract.cpp.o -o papers_submit_draft_contract  ../libcms_core.a 

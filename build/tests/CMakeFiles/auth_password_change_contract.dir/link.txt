@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/auth_password_change_contract.dir/contract/auth_password_change_contract.cpp.o -o auth_password_change_contract  ../libcms_core.a 

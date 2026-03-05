@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc12_registration.dir/acceptance/uat_uc12_registration.cpp.o -o uat_uc12_registration  ../libcms_core.a 

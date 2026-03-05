@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/auth_register_contract.dir/contract/auth_register_contract.cpp.o -o auth_register_contract  ../libcms_core.a 

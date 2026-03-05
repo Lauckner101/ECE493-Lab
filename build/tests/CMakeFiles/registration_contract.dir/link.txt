@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/registration_contract.dir/contract/registration_contract.cpp.o -o registration_contract  ../libcms_core.a 

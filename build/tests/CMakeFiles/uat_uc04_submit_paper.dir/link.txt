@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc04_submit_paper.dir/acceptance/uat_uc04_submit_paper.cpp.o -o uat_uc04_submit_paper  ../libcms_core.a 

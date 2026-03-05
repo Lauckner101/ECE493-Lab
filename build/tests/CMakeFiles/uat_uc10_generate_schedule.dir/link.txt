@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc10_generate_schedule.dir/acceptance/uat_uc10_generate_schedule.cpp.o -o uat_uc10_generate_schedule  ../libcms_core.a 

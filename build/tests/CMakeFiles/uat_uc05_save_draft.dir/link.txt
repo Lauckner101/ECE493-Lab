@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc05_save_draft.dir/acceptance/uat_uc05_save_draft.cpp.o -o uat_uc05_save_draft  ../libcms_core.a 

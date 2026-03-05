@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc02_login.dir/acceptance/uat_uc02_login.cpp.o -o uat_uc02_login  ../libcms_core.a 

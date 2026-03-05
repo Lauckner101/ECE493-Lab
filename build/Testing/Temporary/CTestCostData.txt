@@ -1,0 +1,13 @@
+uat_uc01_registration 1 0.0091545
+uat_uc02_login 1 0.023807
+uat_uc03_password_change 1 0.0164874
+uat_uc04_submit_paper 1 0.0131815
+uat_uc05_save_draft 1 0.0100195
+uat_uc06_assign_referees 1 0.00811548
+uat_uc07_invitation_response 1 0.00908971
+uat_uc08_submit_review 1 0.00672065
+uat_uc09_decision 1 0.00719724
+uat_uc10_generate_schedule 1 0.00794004
+uat_uc11_edit_schedule 1 0.00832894
+uat_uc12_registration 1 0.00802065
+---

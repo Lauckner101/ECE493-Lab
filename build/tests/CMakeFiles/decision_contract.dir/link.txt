@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/decision_contract.dir/contract/decision_contract.cpp.o -o decision_contract  ../libcms_core.a 

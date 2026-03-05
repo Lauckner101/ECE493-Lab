@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/uat_uc06_assign_referees.dir/acceptance/uat_uc06_assign_referees.cpp.o -o uat_uc06_assign_referees  ../libcms_core.a 

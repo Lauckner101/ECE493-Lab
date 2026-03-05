@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/referee_assign_contract.dir/contract/referee_assign_contract.cpp.o -o referee_assign_contract  ../libcms_core.a 
