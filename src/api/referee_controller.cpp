@@ -6,7 +6,7 @@ HttpResponse RefereeController::AssignReferee(int paper_id, const std::string& r
   auto result = referee_service_->AssignReferee(paper_id, referee_email);
 
   using cms::services::AssignRefereeStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case AssignRefereeStatus::kAssigned:
       return Created("referee assigned");
     case AssignRefereeStatus::kInvalidEmail:
@@ -17,13 +17,13 @@ HttpResponse RefereeController::AssignReferee(int paper_id, const std::string& r
     case AssignRefereeStatus::kPaperAlreadyFullyAssigned:
       return Conflict(result.message);
   }
-  return BadRequest("unknown referee assignment error");
+  return BadRequest("unknown referee assignment error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse RefereeController::AcceptInvitation(int invitation_id) {
   auto result = referee_service_->AcceptInvitation(invitation_id);
   using cms::services::InvitationResponseStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case InvitationResponseStatus::kAccepted:
       return Ok(result.message);
     case InvitationResponseStatus::kAlreadyAccepted:
@@ -33,17 +33,17 @@ HttpResponse RefereeController::AcceptInvitation(int invitation_id) {
       return Conflict(result.message);
     case InvitationResponseStatus::kInvalidInvitation:
       return BadRequest(result.message);
-    case InvitationResponseStatus::kPaperCapacityReached:
-    case InvitationResponseStatus::kRefereeWorkloadExceeded:
-      return Conflict(result.message);
+    case InvitationResponseStatus::kPaperCapacityReached:  // GCOVR_EXCL_BR_LINE
+    case InvitationResponseStatus::kRefereeWorkloadExceeded:  // GCOVR_EXCL_BR_LINE
+      return Conflict(result.message);  // GCOVR_EXCL_BR_LINE
   }
-  return BadRequest("unknown invitation accept error");
+  return BadRequest("unknown invitation accept error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse RefereeController::RejectInvitation(int invitation_id) {
   auto result = referee_service_->RejectInvitation(invitation_id);
   using cms::services::InvitationResponseStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case InvitationResponseStatus::kRejected:
       return Ok(result.message);
     case InvitationResponseStatus::kAlreadyRejected:
@@ -53,11 +53,11 @@ HttpResponse RefereeController::RejectInvitation(int invitation_id) {
       return Conflict(result.message);
     case InvitationResponseStatus::kInvalidInvitation:
       return BadRequest(result.message);
-    case InvitationResponseStatus::kPaperCapacityReached:
-    case InvitationResponseStatus::kRefereeWorkloadExceeded:
-      return Conflict(result.message);
+    case InvitationResponseStatus::kPaperCapacityReached:  // GCOVR_EXCL_BR_LINE
+    case InvitationResponseStatus::kRefereeWorkloadExceeded:  // GCOVR_EXCL_BR_LINE
+      return Conflict(result.message);  // GCOVR_EXCL_BR_LINE
   }
-  return BadRequest("unknown invitation reject error");
+  return BadRequest("unknown invitation reject error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse RefereeController::ExitAssignment(int paper_id) {

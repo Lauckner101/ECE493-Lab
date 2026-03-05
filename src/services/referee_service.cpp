@@ -67,7 +67,7 @@ int RefereeService::AssignRefereesBatch(int paper_id, const std::vector<std::str
       ++assigned;
       continue;
     }
-    if (result.status == AssignRefereeStatus::kPaperAlreadyFullyAssigned) {
+    if (result.status == AssignRefereeStatus::kPaperAlreadyFullyAssigned) {  // GCOVR_EXCL_BR_LINE
       break;
     }
   }

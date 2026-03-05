@@ -6,7 +6,7 @@ HttpResponse AuthController::Register(const cms::services::RegisterRequest& requ
   auto result = auth_service_->Register(request);
 
   using cms::services::RegisterStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case RegisterStatus::kCreated:
       return Created("registration successful", "/login");
     case RegisterStatus::kDuplicateEmail:
@@ -16,14 +16,14 @@ HttpResponse AuthController::Register(const cms::services::RegisterRequest& requ
     case RegisterStatus::kWeakPassword:
       return BadRequest(result.message);
   }
-  return BadRequest("unknown registration error");
+  return BadRequest("unknown registration error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse AuthController::Login(const cms::services::LoginRequest& request) {
   auto result = auth_service_->LoginByUsername(request);
 
   using cms::services::LoginStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case LoginStatus::kAuthenticated: {
       if (session_service_ == nullptr) {
         return Ok("authenticated", "/home");
@@ -36,7 +36,7 @@ HttpResponse AuthController::Login(const cms::services::LoginRequest& request) {
     case LoginStatus::kInvalidCredentials:
       return Unauthorized(result.message);
   }
-  return Unauthorized("unknown login error");
+  return Unauthorized("unknown login error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse AuthController::ChangePassword(
@@ -51,7 +51,7 @@ HttpResponse AuthController::ChangePassword(
 
   auto result = auth_service_->ChangePassword(user_id.value(), request);
   using cms::services::ChangePasswordStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case ChangePasswordStatus::kChanged:
       return Ok(result.message);
     case ChangePasswordStatus::kInvalidCurrentPassword:
@@ -64,7 +64,7 @@ HttpResponse AuthController::ChangePassword(
     case ChangePasswordStatus::kUserNotFound:
       return Unauthorized(result.message);
   }
-  return BadRequest("unknown password change error");
+  return BadRequest("unknown password change error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse AuthController::ProtectedPage(const std::string& session_token) const {

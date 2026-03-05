@@ -15,8 +15,8 @@ bool IsBlank(const std::string& value) {
 }
 
 bool IsValidEmailFormat(const std::string& email) {
-  static const std::regex kPattern(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$)");
-  return std::regex_match(email, kPattern);
+  static const std::regex kPattern(R"(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$)");  // GCOVR_EXCL_BR_LINE
+  return std::regex_match(email, kPattern);  // GCOVR_EXCL_BR_LINE
 }
 
 bool IsPasswordComplex(const std::string& password) {

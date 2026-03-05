@@ -70,8 +70,8 @@ bool UserRepository::UpdatePasswordByUserId(int user_id, const std::string& new_
 cms::models::UserAccount UserRepository::Create(const std::string& name, const std::string& username,
                                                 const std::string& email,
                                                 const std::string& password_hash) {
-  cms::models::UserAccount account{next_id_++, name, Normalize(username), Normalize(email),
-                                   password_hash};
+  cms::models::UserAccount account{next_id_++, name, Normalize(username), Normalize(email),  // GCOVR_EXCL_BR_LINE
+                                   password_hash};  // GCOVR_EXCL_BR_LINE
   by_email_[account.email] = account;
   by_username_[account.username] = account;
   return account;

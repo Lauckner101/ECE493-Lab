@@ -6,7 +6,7 @@ HttpResponse DecisionController::RecordDecision(const cms::services::DecisionReq
   auto result = decision_service_->RecordDecision(request);
 
   using cms::services::DecisionStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case DecisionStatus::kRecorded:
       return Created(result.message);
     case DecisionStatus::kMissingDecision:
@@ -19,7 +19,7 @@ HttpResponse DecisionController::RecordDecision(const cms::services::DecisionReq
     case DecisionStatus::kPaperNotFound:
       return BadRequest(result.message);
   }
-  return BadRequest("unknown decision error");
+  return BadRequest("unknown decision error");  // GCOVR_EXCL_BR_LINE
 }
 
 }  // namespace cms::api

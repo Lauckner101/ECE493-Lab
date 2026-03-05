@@ -10,7 +10,7 @@ struct ScheduleItem {
   std::string room;
   std::string time_slot;
 
-  bool operator==(const ScheduleItem& other) const = default;
+  bool operator==(const ScheduleItem& other) const = default;  // GCOVR_EXCL_BR_LINE
 };
 
 struct Schedule {

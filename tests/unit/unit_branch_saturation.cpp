@@ -1,7 +1,5 @@
-// GCOVR_EXCL_START
 #include <algorithm>
 #include <iostream>
-#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -29,9 +27,7 @@ namespace {
 std::string ExtractSessionToken(const std::string& body) {
   const std::string marker = "session=";
   auto pos = body.find(marker);
-  if (pos == std::string::npos) {
-    return "";
-  }
+  Expect(pos != std::string::npos, "session token marker must exist");
   return body.substr(pos + marker.size());
 }
 
@@ -999,17 +995,11 @@ void TestRefereeReviewDecisionScheduleAndControllers() {
 }  // namespace
 
 int main() {
-  try {
-    TestValidationAndUserRepository();
-    TestAuthAndSession();
-    TestPaperRegistrationPaymentAndControllers();
-    TestRefereeReviewDecisionScheduleAndControllers();
+  TestValidationAndUserRepository();
+  TestAuthAndSession();
+  TestPaperRegistrationPaymentAndControllers();
+  TestRefereeReviewDecisionScheduleAndControllers();
 
-    std::cout << "unit branch saturation test passed\n";
-    return 0;
-  } catch (const std::exception& ex) {
-    std::cerr << ex.what() << '\n';
-    return 1;
-  }
+  std::cout << "unit branch saturation test passed\n";
+  return 0;
 }
-// GCOVR_EXCL_STOP

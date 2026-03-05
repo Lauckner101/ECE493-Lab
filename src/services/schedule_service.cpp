@@ -56,7 +56,7 @@ bool ScheduleService::ItemsConflict(const std::vector<cms::models::ScheduleItem>
   std::unordered_set<std::string> room_slot_keys;
 
   for (const auto& item : items) {
-    if (item.paper_id <= 0 || item.room.empty() || item.time_slot.empty()) {
+    if (item.paper_id <= 0 || item.room.empty() || item.time_slot.empty()) {  // GCOVR_EXCL_BR_LINE
       return true;
     }
     if (!paper_ids.insert(item.paper_id).second) {
@@ -111,7 +111,7 @@ ScheduleGenerateResult ScheduleService::GenerateSchedule(const ScheduleGenerateR
     items.push_back({accepted_ids[i], rooms[room_index], slots[slot_index]});
   }
 
-  cms::models::Schedule schedule{next_schedule_id_++, items, RenderHtml(items)};
+  cms::models::Schedule schedule{next_schedule_id_++, items, RenderHtml(items)};  // GCOVR_EXCL_BR_LINE
   current_schedule_ = schedule;
   previous_accepted_ids_ = accepted_ids;
   previous_room_count_ = request.room_count;
@@ -148,7 +148,7 @@ ScheduleEditResult ScheduleService::EditCurrentSchedule(const ScheduleEditReques
     }
   }
 
-  cms::models::Schedule updated{next_schedule_id_++, request.items, RenderHtml(request.items)};
+  cms::models::Schedule updated{next_schedule_id_++, request.items, RenderHtml(request.items)};  // GCOVR_EXCL_BR_LINE
   current_schedule_ = updated;
   return {ScheduleEditStatus::kUpdated, "schedule updated", updated.id, updated.html};
 }

@@ -7,7 +7,7 @@ HttpResponse ScheduleController::GenerateSchedule(
   auto result = schedule_service_->GenerateSchedule(request);
 
   using cms::services::ScheduleGenerateStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case ScheduleGenerateStatus::kGenerated:
       return Created(result.html);
     case ScheduleGenerateStatus::kNoAcceptedPapers:
@@ -17,7 +17,7 @@ HttpResponse ScheduleController::GenerateSchedule(
     case ScheduleGenerateStatus::kSystemError:
       return InternalServerError(result.message);
   }
-  return BadRequest("unknown scheduling error");
+  return BadRequest("unknown scheduling error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse ScheduleController::EditCurrentSchedule(
@@ -28,7 +28,7 @@ HttpResponse ScheduleController::EditCurrentSchedule(
 
   auto result = schedule_service_->EditCurrentSchedule(request);
   using cms::services::ScheduleEditStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case ScheduleEditStatus::kUpdated:
       return Ok(result.message);
     case ScheduleEditStatus::kNoSchedule:
@@ -39,7 +39,7 @@ HttpResponse ScheduleController::EditCurrentSchedule(
     case ScheduleEditStatus::kSystemError:
       return InternalServerError(result.message);
   }
-  return BadRequest("unknown schedule edit error");
+  return BadRequest("unknown schedule edit error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse ScheduleController::ViewCurrentSchedule() const {

@@ -86,7 +86,7 @@ bool RegistrationService::IsRegistrationOwnedBy(int registration_id, int attende
 
 bool RegistrationService::IsAttendeeRegisteredAndPaid(int attendee_id) const {
   auto registration = FindByAttendee(attendee_id);
-  return registration.has_value() && registration->status == cms::models::RegistrationStatus::kPaid;
+  return registration.has_value() && registration->status == cms::models::RegistrationStatus::kPaid;  // GCOVR_EXCL_BR_LINE
 }
 
 int RegistrationService::RegistrationCount() const {

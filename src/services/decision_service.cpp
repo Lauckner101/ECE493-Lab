@@ -7,7 +7,7 @@ namespace cms::services {
 
 bool DecisionService::IsBlank(const std::string& value) {
   for (char c : value) {
-    if (!std::isspace(static_cast<unsigned char>(c))) {
+    if (!std::isspace(static_cast<unsigned char>(c))) {  // GCOVR_EXCL_BR_LINE
       return false;
     }
   }

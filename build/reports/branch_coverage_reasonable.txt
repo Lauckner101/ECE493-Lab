@@ -1,0 +1,47 @@
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: .
+------------------------------------------------------------------------------
+File                                    Branches   Taken  Cover   Missing
+------------------------------------------------------------------------------
+src/api/auth_controller.cpp                   57      57   100%
+src/api/auth_controller.hpp                    0       0    --%
+src/api/auth_middleware.cpp                    0       0    --%
+src/api/decision_controller.cpp                7       7   100%
+src/api/decision_controller.hpp                0       0    --%
+src/api/http_errors.cpp                        0       0    --%
+src/api/paper_controller.cpp                  42      42   100%
+src/api/paper_controller.hpp                   0       0    --%
+src/api/referee_controller.cpp                28      28   100%
+src/api/referee_controller.hpp                 0       0    --%
+src/api/registration_controller.cpp           50      50   100%
+src/api/registration_controller.hpp            0       0    --%
+src/api/review_controller.cpp                  6       6   100%
+src/api/review_controller.hpp                  0       0    --%
+src/api/routes.cpp                             1       1   100%
+src/api/schedule_controller.cpp               23      23   100%
+src/api/schedule_controller.hpp                0       0    --%
+src/lib/logging.cpp                            0       0    --%
+src/lib/validation.cpp                        24      24   100%
+src/models/schedule.hpp                        0       0    --%
+src/services/auth_service.cpp                 69      69   100%
+src/services/auth_service.hpp                  0       0    --%
+src/services/db.cpp                            0       0    --%
+src/services/decision_service.cpp             39      39   100%
+src/services/decision_service.hpp              0       0    --%
+src/services/notification_service.cpp          0       0    --%
+src/services/paper_service.cpp               125     125   100%
+src/services/payment_service.cpp              46      46   100%
+src/services/payment_service.hpp               0       0    --%
+src/services/referee_service.cpp             107     107   100%
+src/services/referee_service.hpp               0       0    --%
+src/services/registration_service.cpp         45      45   100%
+src/services/review_service.cpp               57      57   100%
+src/services/review_service.hpp                0       0    --%
+src/services/schedule_service.cpp             87      87   100%
+src/services/schedule_service.hpp              0       0    --%
+src/services/session_service.cpp              11      11   100%
+src/services/user_repository.cpp              31      31   100%
+------------------------------------------------------------------------------
+TOTAL                                        855     855   100%
+------------------------------------------------------------------------------

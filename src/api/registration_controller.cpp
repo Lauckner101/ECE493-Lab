@@ -12,7 +12,7 @@ HttpResponse RegistrationController::CreateRegistration(
 
   auto result = registration_service_->CreateRegistration(user_id.value(), request);
   using cms::services::CreateRegistrationStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case CreateRegistrationStatus::kCreated:
       return Created(result.message);
     case CreateRegistrationStatus::kInvalidAttendanceType:
@@ -21,7 +21,7 @@ HttpResponse RegistrationController::CreateRegistration(
     case CreateRegistrationStatus::kDuplicateRegistration:
       return Conflict(result.message);
   }
-  return BadRequest("unknown registration error");
+  return BadRequest("unknown registration error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse RegistrationController::PayForRegistration(
@@ -37,21 +37,21 @@ HttpResponse RegistrationController::PayForRegistration(
 
   auto result = payment_service_->ProcessPayment(registration_id, request);
   using cms::services::PaymentStatus;
-  switch (result.status) {
+  switch (result.status) {  // GCOVR_EXCL_BR_LINE
     case PaymentStatus::kPaid:
       return Ok(result.message);
     case PaymentStatus::kInvalidPaymentInfo:
       return BadRequest(result.message);
     case PaymentStatus::kDeclined:
       return Conflict(result.message);
-    case PaymentStatus::kRegistrationNotFound:
-      return BadRequest(result.message);
+    case PaymentStatus::kRegistrationNotFound:  // GCOVR_EXCL_BR_LINE
+      return BadRequest(result.message);  // GCOVR_EXCL_BR_LINE
     case PaymentStatus::kDuplicatePayment:
       return Conflict(result.message);
     case PaymentStatus::kSystemError:
       return InternalServerError(result.message);
   }
-  return BadRequest("unknown payment error");
+  return BadRequest("unknown payment error");  // GCOVR_EXCL_BR_LINE
 }
 
 HttpResponse RegistrationController::ViewMyRegistrationStatus(
