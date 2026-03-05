@@ -76,3 +76,7 @@ add_test(payment_contract "/home/nermy/Desktop/ECE493-Lab/build/tests/payment_co
 set_tests_properties(payment_contract PROPERTIES  _BACKTRACE_TRIPLES "/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;174;add_test;/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;0;")
 add_test(registration_payment_flow "/home/nermy/Desktop/ECE493-Lab/build/tests/registration_payment_flow")
 set_tests_properties(registration_payment_flow PROPERTIES  _BACKTRACE_TRIPLES "/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;179;add_test;/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;0;")
+add_test(unit_branch_saturation "/home/nermy/Desktop/ECE493-Lab/build/tests/unit_branch_saturation")
+set_tests_properties(unit_branch_saturation PROPERTIES  _BACKTRACE_TRIPLES "/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;184;add_test;/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;0;")
+add_test(unit_coverage_complete "/home/nermy/Desktop/ECE493-Lab/build/tests/unit_coverage_complete")
+set_tests_properties(unit_coverage_complete PROPERTIES  _BACKTRACE_TRIPLES "/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;189;add_test;/home/nermy/Desktop/ECE493-Lab/tests/CMakeLists.txt;0;")

@@ -607,6 +607,32 @@ registration_payment_flow/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/registration_payment_flow.dir/build.make tests/CMakeFiles/registration_payment_flow.dir/build
 .PHONY : registration_payment_flow/fast
 
+#=============================================================================
+# Target rules for targets named unit_branch_saturation
+
+# Build rule for target.
+unit_branch_saturation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit_branch_saturation
+.PHONY : unit_branch_saturation
+
+# fast build rule for target.
+unit_branch_saturation/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_branch_saturation.dir/build.make tests/CMakeFiles/unit_branch_saturation.dir/build
+.PHONY : unit_branch_saturation/fast
+
+#=============================================================================
+# Target rules for targets named unit_coverage_complete
+
+# Build rule for target.
+unit_coverage_complete: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit_coverage_complete
+.PHONY : unit_coverage_complete
+
+# fast build rule for target.
+unit_coverage_complete/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_coverage_complete.dir/build.make tests/CMakeFiles/unit_coverage_complete.dir/build
+.PHONY : unit_coverage_complete/fast
+
 src/api/auth_controller.o: src/api/auth_controller.cpp.o
 .PHONY : src/api/auth_controller.o
 
@@ -1421,6 +1447,8 @@ help:
 	@echo "... uat_uc10_generate_schedule"
 	@echo "... uat_uc11_edit_schedule"
 	@echo "... uat_uc12_registration"
+	@echo "... unit_branch_saturation"
+	@echo "... unit_coverage_complete"
 	@echo "... src/api/auth_controller.o"
 	@echo "... src/api/auth_controller.i"
 	@echo "... src/api/auth_controller.s"

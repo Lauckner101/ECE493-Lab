@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: .
+------------------------------------------------------------------------------
+File                                    Branches   Taken  Cover   Missing
+------------------------------------------------------------------------------
+tests/integration/decision_flow.cpp            0       0    --%
+tests/integration/draft_submit_flow.cpp        0       0    --%
+tests/integration/login_flow.cpp               0       0    --%
+tests/integration/paper_submit_flow.cpp        0       0    --%
+tests/integration/password_change_flow.cpp
+                                               0       0    --%
+tests/integration/referee_assign_flow.cpp
+                                               0       0    --%
+tests/integration/registration_flow.cpp        0       0    --%
+tests/integration/registration_payment_flow.cpp
+                                               0       0    --%
+tests/integration/review_submit_flow.cpp       0       0    --%
+tests/unit/unit_branch_saturation.cpp          0       0    --%
+tests/unit/unit_coverage_complete.cpp          2       2   100%
+------------------------------------------------------------------------------
+TOTAL                                          2       2   100%
+------------------------------------------------------------------------------
+lines: 100.0% (6 out of 6)
+functions: 100.0% (2 out of 2)
+branches: 100.0% (2 out of 2)

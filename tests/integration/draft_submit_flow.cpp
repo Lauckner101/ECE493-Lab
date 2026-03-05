@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <iostream>
 #include <string>
 
@@ -58,3 +59,4 @@ int main() {
     return 1;
   }
 }
+// GCOVR_EXCL_STOP

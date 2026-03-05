@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -O0 -g -g --coverage CMakeFiles/unit_coverage_complete.dir/unit/unit_coverage_complete.cpp.o -o unit_coverage_complete  ../libcms_core.a 

@@ -1,0 +1,35 @@
+        -:    0:Source:/home/nermy/Desktop/ECE493-Lab/src/models/schedule.hpp
+        -:    0:Graph:build/CMakeFiles/cms_core.dir/src/services/schedule_service.cpp.gcno
+        -:    0:Data:build/CMakeFiles/cms_core.dir/src/services/schedule_service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <string>
+        -:    4:#include <vector>
+        -:    5:
+        -:    6:namespace cms::models {
+        -:    7:
+        -:    8:struct ScheduleItem {
+       20:    9:  int paper_id;
+       19:   10:  std::string room;
+       16:   11:  std::string time_slot;
+        -:   12:
+function _ZNK3cms6models12ScheduleItemeqERKS1_ called 20 returned 100% blocks executed 90%
+      20*:   13:  bool operator==(const ScheduleItem& other) const = default;
+branch  0 taken 1 (fallthrough)
+branch  1 taken 19
+call    2 returned 19
+branch  3 taken 3 (fallthrough)
+branch  4 taken 16
+call    5 returned 16
+branch  6 taken 0 (fallthrough)
+branch  7 taken 16
+        -:   14:};
+        -:   15:
+        -:   16:struct Schedule {
+        -:   17:  int id;
+        -:   18:  std::vector<ScheduleItem> items;
+        -:   19:  std::string html;
+        -:   20:};
+        -:   21:
+        -:   22:}  // namespace cms::models

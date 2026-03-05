@@ -1,0 +1,1 @@
+genhtml build/unit_integration_noexc.filtered.info --output-directory build/unit_integration_noexc_html --branch-coverage --rc branch_coverage=1 --rc no_exception_branch=1

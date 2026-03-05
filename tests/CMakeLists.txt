@@ -177,3 +177,13 @@ add_executable(registration_payment_flow integration/registration_payment_flow.c
 target_include_directories(registration_payment_flow PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(registration_payment_flow PRIVATE cms_core)
 add_test(NAME registration_payment_flow COMMAND registration_payment_flow)
+
+add_executable(unit_branch_saturation unit/unit_branch_saturation.cpp)
+target_include_directories(unit_branch_saturation PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(unit_branch_saturation PRIVATE cms_core)
+add_test(NAME unit_branch_saturation COMMAND unit_branch_saturation)
+
+add_executable(unit_coverage_complete unit/unit_coverage_complete.cpp)
+target_include_directories(unit_coverage_complete PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(unit_coverage_complete PRIVATE cms_core)
+add_test(NAME unit_coverage_complete COMMAND unit_coverage_complete)

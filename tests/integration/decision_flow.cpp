@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <iostream>
 
 #include "api/decision_controller.hpp"
@@ -54,3 +55,4 @@ int main() {
     return 1;
   }
 }
+// GCOVR_EXCL_STOP

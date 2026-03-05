@@ -38,6 +38,8 @@
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/registration_contract.dir
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/payment_contract.dir
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/registration_payment_flow.dir
+/home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/unit_branch_saturation.dir
+/home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/unit_coverage_complete.dir
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/test.dir
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/edit_cache.dir
 /home/nermy/Desktop/ECE493-Lab/build/tests/CMakeFiles/rebuild_cache.dir

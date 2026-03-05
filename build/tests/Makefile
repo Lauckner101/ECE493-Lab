@@ -630,6 +630,34 @@ registration_payment_flow/fast:
 	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/registration_payment_flow.dir/build.make tests/CMakeFiles/registration_payment_flow.dir/build
 .PHONY : registration_payment_flow/fast
 
+# Convenience name for target.
+tests/CMakeFiles/unit_branch_saturation.dir/rule:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/unit_branch_saturation.dir/rule
+.PHONY : tests/CMakeFiles/unit_branch_saturation.dir/rule
+
+# Convenience name for target.
+unit_branch_saturation: tests/CMakeFiles/unit_branch_saturation.dir/rule
+.PHONY : unit_branch_saturation
+
+# fast build rule for target.
+unit_branch_saturation/fast:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_branch_saturation.dir/build.make tests/CMakeFiles/unit_branch_saturation.dir/build
+.PHONY : unit_branch_saturation/fast
+
+# Convenience name for target.
+tests/CMakeFiles/unit_coverage_complete.dir/rule:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/unit_coverage_complete.dir/rule
+.PHONY : tests/CMakeFiles/unit_coverage_complete.dir/rule
+
+# Convenience name for target.
+unit_coverage_complete: tests/CMakeFiles/unit_coverage_complete.dir/rule
+.PHONY : unit_coverage_complete
+
+# fast build rule for target.
+unit_coverage_complete/fast:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_coverage_complete.dir/build.make tests/CMakeFiles/unit_coverage_complete.dir/build
+.PHONY : unit_coverage_complete/fast
+
 acceptance/uat_uc01_registration.o: acceptance/uat_uc01_registration.cpp.o
 .PHONY : acceptance/uat_uc01_registration.o
 
@@ -1494,6 +1522,54 @@ integration/review_submit_flow.cpp.s:
 	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/review_submit_flow.dir/build.make tests/CMakeFiles/review_submit_flow.dir/integration/review_submit_flow.cpp.s
 .PHONY : integration/review_submit_flow.cpp.s
 
+unit/unit_branch_saturation.o: unit/unit_branch_saturation.cpp.o
+.PHONY : unit/unit_branch_saturation.o
+
+# target to build an object file
+unit/unit_branch_saturation.cpp.o:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_branch_saturation.dir/build.make tests/CMakeFiles/unit_branch_saturation.dir/unit/unit_branch_saturation.cpp.o
+.PHONY : unit/unit_branch_saturation.cpp.o
+
+unit/unit_branch_saturation.i: unit/unit_branch_saturation.cpp.i
+.PHONY : unit/unit_branch_saturation.i
+
+# target to preprocess a source file
+unit/unit_branch_saturation.cpp.i:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_branch_saturation.dir/build.make tests/CMakeFiles/unit_branch_saturation.dir/unit/unit_branch_saturation.cpp.i
+.PHONY : unit/unit_branch_saturation.cpp.i
+
+unit/unit_branch_saturation.s: unit/unit_branch_saturation.cpp.s
+.PHONY : unit/unit_branch_saturation.s
+
+# target to generate assembly for a file
+unit/unit_branch_saturation.cpp.s:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_branch_saturation.dir/build.make tests/CMakeFiles/unit_branch_saturation.dir/unit/unit_branch_saturation.cpp.s
+.PHONY : unit/unit_branch_saturation.cpp.s
+
+unit/unit_coverage_complete.o: unit/unit_coverage_complete.cpp.o
+.PHONY : unit/unit_coverage_complete.o
+
+# target to build an object file
+unit/unit_coverage_complete.cpp.o:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_coverage_complete.dir/build.make tests/CMakeFiles/unit_coverage_complete.dir/unit/unit_coverage_complete.cpp.o
+.PHONY : unit/unit_coverage_complete.cpp.o
+
+unit/unit_coverage_complete.i: unit/unit_coverage_complete.cpp.i
+.PHONY : unit/unit_coverage_complete.i
+
+# target to preprocess a source file
+unit/unit_coverage_complete.cpp.i:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_coverage_complete.dir/build.make tests/CMakeFiles/unit_coverage_complete.dir/unit/unit_coverage_complete.cpp.i
+.PHONY : unit/unit_coverage_complete.cpp.i
+
+unit/unit_coverage_complete.s: unit/unit_coverage_complete.cpp.s
+.PHONY : unit/unit_coverage_complete.s
+
+# target to generate assembly for a file
+unit/unit_coverage_complete.cpp.s:
+	cd /home/nermy/Desktop/ECE493-Lab/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unit_coverage_complete.dir/build.make tests/CMakeFiles/unit_coverage_complete.dir/unit/unit_coverage_complete.cpp.s
+.PHONY : unit/unit_coverage_complete.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1539,6 +1615,8 @@ help:
 	@echo "... uat_uc10_generate_schedule"
 	@echo "... uat_uc11_edit_schedule"
 	@echo "... uat_uc12_registration"
+	@echo "... unit_branch_saturation"
+	@echo "... unit_coverage_complete"
 	@echo "... acceptance/uat_uc01_registration.o"
 	@echo "... acceptance/uat_uc01_registration.i"
 	@echo "... acceptance/uat_uc01_registration.s"
@@ -1647,6 +1725,12 @@ help:
 	@echo "... integration/review_submit_flow.o"
 	@echo "... integration/review_submit_flow.i"
 	@echo "... integration/review_submit_flow.s"
+	@echo "... unit/unit_branch_saturation.o"
+	@echo "... unit/unit_branch_saturation.i"
+	@echo "... unit/unit_branch_saturation.s"
+	@echo "... unit/unit_coverage_complete.o"
+	@echo "... unit/unit_coverage_complete.i"
+	@echo "... unit/unit_coverage_complete.s"
 .PHONY : help
 
 
